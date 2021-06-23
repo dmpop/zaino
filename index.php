@@ -28,11 +28,11 @@ include('config.php');
 		<hr>
 		<?php
 		if ($_GET['key'] == $key) {
-			$entry = '<p>' . $_GET['entry'] . ' &mdash; <em>' . $_GET['def'] . '</em></p>' . "\n";
-			$entry .= file_get_contents('zaino.txt');
-			file_put_contents('zaino.txt', $entry);
+			$snippet = '<p>' . $_GET['snippet'] . '</p>' . "\n";
+			$snippet .= file_get_contents('zaino.txt');
+			file_put_contents('zaino.txt', $snippet);
 			echo "<script>";
-			echo 'alert("Entry has been saved.")';
+			echo 'alert("Snippet has been saved.")';
 			echo "</script>";
 		}
 		$f = fopen("zaino.txt", "r");

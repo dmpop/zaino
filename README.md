@@ -1,6 +1,6 @@
 # Zaino
 
-Zaino is a stupidly simple snippet collector. It makes it possible to save entries and their definitions (or notes) using the accompanying bookmarklet. The data is saved in a plain text file. The contents of the file is displayed as a list.
+Zaino is a stupidly simple snippet collector. It makes it possible to save etext snippets using the accompanying bookmarklet. The data is saved in a plain text file. The contents of the file is displayed as a list.
 
 ## Dependencies
 
@@ -18,14 +18,14 @@ Zaino is a stupidly simple snippet collector. It makes it possible to save entri
 Add the bookmarklet below to the **Bookmarks** toolbar of your browser. (Replace _127.0.0.1_ with the actual IP address or domain name of the server running Zaino.)
 
 ```javascript
-javascript:var def = prompt('Definition'); var%20entry=window.getSelection();location.href='http://127.0.0.1/index.php?entry='+escape(entry)+'&def='+escape(def)+'&key=secret'
+javascript:var snippet = prompt('Snippet'); location.href='http://127.0.0.1/index.php?snippet='+escape(snippet)+'&key=secret'
 ```
 
 To run Zaino locally, switch in the terminal to the _zaino_ directory,  run the `php -S 127.0.0.1:8000` command, and point the browser to the _127.0.0.1:8000_ address.
 
 To install Zaino on a web server with PHP, move the _zaino_ directory to the document root of your server.
 
-To bookmark the currently opened page, select a text that entry, provide its definition or description, and press **OK**.
+To save a snippet, click on the bookmarklet, enter the desired text, and press **OK**.
 
 ## Problems?
 
