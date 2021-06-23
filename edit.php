@@ -28,7 +28,7 @@ include('config.php');
 <body>
 	<div class="card text-center">
 		<div class="uk-card uk-card-default uk-card-body">
-			<h1 style="margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; margin-bottom: 0.7em; color: #f6a159ff;"><span><?php echo $title ?></span></h1>
+			<h1 style="margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; margin-bottom: 0.7em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
 			<button onclick="location.href='index.php'">Back</button>
 			<?php
 			function Read()
@@ -47,9 +47,7 @@ include('config.php');
 			if (isset($_POST["save"])) {
 				if ($_POST['password']!=$key) { print '<p>Wrong password</p>'; exit(); }
 				Write();
-				echo "<script>";
-				echo 'alert("Changes saved")';
-				echo "</script>";
+				header('Location:index.php');
 			};
 			?>
 			<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">

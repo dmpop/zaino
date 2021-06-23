@@ -1,6 +1,6 @@
 <?php
 // Title
-$title = "ZAINO";
+$title = "Zaino";
 // Theme (light, dark, sepia)
 $theme = "sepia";
 // Secret key

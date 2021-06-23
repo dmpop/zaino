@@ -23,7 +23,7 @@ include('config.php');
 
 <body>
 	<div class="card text-center">
-		<h1 style="margin-left: 0.19em; margin-bottom: 0.7em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #f6a159ff;"><span><?php echo $title ?></span></h1>
+		<h1 style="margin-left: 0.19em; margin-bottom: 0.7em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
 		<button style="margin-bottom: 2em;" onclick="location.href='edit.php'">Edit list</button>
 		<hr>
 		<?php
@@ -31,9 +31,6 @@ include('config.php');
 			$snippet = '<p>' . $_GET['snippet'] . '</p>' . "\n";
 			$snippet .= file_get_contents('zaino.txt');
 			file_put_contents('zaino.txt', $snippet);
-			echo "<script>";
-			echo 'alert("Snippet has been saved.")';
-			echo "</script>";
 		}
 		$f = fopen("zaino.txt", "r");
 		if ($f) {
