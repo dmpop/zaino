@@ -15,10 +15,10 @@ Zaino is a stupidly simple snippet collector. It makes it possible to save etext
 3. Open the _zaino/config.php_ file and modify the default settings.
 
 
-Add the bookmarklet below to the **Bookmarks** toolbar of your browser. (Replace _127.0.0.1_ with the actual IP address or domain name of the server running Zaino.)
+Add the bookmarklet below to the **Bookmarks** toolbar of your browser. Replace _127.0.0.1_ with the actual IP address or domain name of the server running Zaino and _secret_ with the actual key specified in the _config.php_ file.
 
 ```javascript
-javascript:var snippet = prompt('Snippet'); location.href='http://127.0.0.1/index.php?snippet='+escape(snippet)+'&key=secret'
+javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&key=secret'
 ```
 
 To run Zaino locally, switch in the terminal to the _zaino_ directory,  run the `php -S 127.0.0.1:8000` command, and point the browser to the _127.0.0.1:8000_ address.

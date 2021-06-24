@@ -31,6 +31,7 @@ include('config.php');
 			$snippet = '<p>' . $_GET['snippet'] . '</p>' . "\n";
 			$snippet .= file_get_contents('zaino.txt');
 			file_put_contents('zaino.txt', $snippet);
+			header("location:".$_GET['url']."");
 		}
 		$f = fopen("zaino.txt", "r");
 		if ($f) {
