@@ -18,7 +18,8 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="classless.css" />
+	<link rel="stylesheet" href="css/classless.css" />
+	<link rel="stylesheet" href="css/themes.css" />
 </head>
 
 <body>
