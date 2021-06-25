@@ -7,10 +7,10 @@ include('config.php');
 
 <html lang="en" data-theme="<?php echo $theme ?>">
 
-<!-- javascript:var def = prompt('Definition'); var%20entry=window.getSelection();location.href='http://localhost:8000/index.php?entry='+escape(entry)+'&def='+escape(def)+'&key=secret' -->
-
 <!-- Author: Dmitri Popov, dmpop@linux.com
-         License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
+					License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt
+
+javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&key=secret' -->
 
 <head>
 	<meta charset="utf-8">
@@ -23,7 +23,7 @@ include('config.php');
 
 <body>
 	<div class="card text-center">
-		<h1 style="margin-left: 0.19em; margin-bottom: 0.7em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
+		<h1 style="margin-left: 0.19em; margin-bottom: 0.5em; vertical-align: middle; letter-spacing: 3px; margin-top: 0.5em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
 		<button style="margin-bottom: 2em;" onclick="location.href='edit.php'">Edit list</button>
 		<hr>
 		<?php
@@ -31,7 +31,7 @@ include('config.php');
 			$snippet = '<p>' . $_GET['snippet'] . '</p>' . "\n";
 			$snippet .= file_get_contents('zaino.txt');
 			file_put_contents('zaino.txt', $snippet);
-			header("location:".$_GET['url']."");
+			header("location:" . $_GET['url'] . "");
 		}
 		$f = fopen("zaino.txt", "r");
 		if ($f) {
@@ -41,7 +41,7 @@ include('config.php');
 			fclose($f);
 		} else {
 			echo "<script>";
-			echo 'alert("No entires found.")';
+			echo 'alert("Nothing found.")';
 			echo "</script>";
 		}
 		?>
