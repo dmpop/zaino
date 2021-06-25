@@ -25,11 +25,11 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 <body>
 	<div class="card text-center">
 		<h1 style="margin-left: 0.19em; margin-bottom: 0.5em; vertical-align: middle; letter-spacing: 3px; margin-top: 0.5em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
-		<button style="margin-bottom: 2em;" onclick="location.href='edit.php'">Edit list</button>
+		<button style="margin-bottom: 2em;" onclick="location.href='edit.php'">Edit</button>
 		<hr>
 		<?php
 		if ($_GET['key'] == $key) {
-			$snippet = '<p>' . $_GET['snippet'] . '</p>' . "\n";
+			$snippet = $_GET['snippet'] . "\n";
 			$snippet .= file_get_contents('zaino.txt');
 			file_put_contents('zaino.txt', $snippet);
 			header("location:" . $_GET['url'] . "");
@@ -37,7 +37,7 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 		$f = fopen("zaino.txt", "r");
 		if ($f) {
 			while (($line = fgets($f)) !== false) {
-				echo $line;
+				echo '<p>' . $line . '</p>';
 			}
 			fclose($f);
 		} else {
@@ -47,7 +47,25 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 		}
 		?>
 		<hr>
-		<p><?php echo $footer; ?></p>
+		<p style="margin-right: 0.5em;"><?php echo $footer; ?>
+			<select style="font-size: 90%;" id="theme" onchange="switchTheme(this)">
+				<option value="light">Light</option>
+				<option value="dark">Dark</option>
+				<option value="sepia">Sepia</option>
+				<option value="milligram">Milligram</option>
+				<option value="pure">Pure</option>
+				<option value="sakura">Sakura</option>
+				<option value="skeleton">Skeleton</option>
+				<option value="bootstrap">Bootstrap</option>
+				<option value="medium">Medium</option>
+				<option value="tufte">Tufte</option>
+			</select>
+		</p>
+		<script>
+			function switchTheme(el) {
+				document.documentElement.setAttribute('data-theme', el.value)
+			}
+		</script>
 	</div>
 	</div>
 </body>

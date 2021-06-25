@@ -1,7 +1,7 @@
 <?php
 // Title
 $title = "Zaino";
-// Theme (light, dark, sepia)
+// Theme
 $theme = "sepia";
 // Secret key
 $key = "secret";
