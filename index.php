@@ -48,24 +48,7 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 		?>
 		<hr>
 		<p style="margin-right: 0.5em;"><?php echo $footer; ?>
-			<select style="font-size: 90%;" id="theme" onchange="switchTheme(this)">
-				<option value="light">Light</option>
-				<option value="dark">Dark</option>
-				<option value="sepia">Sepia</option>
-				<option value="milligram">Milligram</option>
-				<option value="pure">Pure</option>
-				<option value="sakura">Sakura</option>
-				<option value="skeleton">Skeleton</option>
-				<option value="bootstrap">Bootstrap</option>
-				<option value="medium">Medium</option>
-				<option value="tufte">Tufte</option>
-			</select>
 		</p>
-		<script>
-			function switchTheme(el) {
-				document.documentElement.setAttribute('data-theme', el.value)
-			}
-		</script>
 	</div>
 	</div>
 </body>
