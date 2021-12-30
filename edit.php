@@ -2,7 +2,7 @@
 error_reporting(E_ERROR);
 $title = "Zaino";
 $theme = "light";
-$password = "secret";
+$password = "password";
 $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 ?>
 
@@ -24,7 +24,7 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 			width: 100%;
 			height: 55%;
 			line-height: 1.9;
-			margin-top: 2em;
+			margin-top: 1em;
 		}
 	</style>
 </head>
@@ -61,12 +61,18 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 		};
 		?>
 		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-			<textarea name="text"><?php Read(); ?></textarea><br /><br />
-			<input type="password" name="password">
+			<textarea name="text"><?php Read(); ?></textarea>
+			<div>
+				<label for='password'>Password:</label>
+			</div>
+			<div>
+				<input type="password" name="password">
+			</div>
 			<button type="submit" name="save">Save</button>
 		</form>
-		<hr />
-		<p><?php echo $footer; ?></p>
+	</div>
+	<div class="text-center">
+		<?php echo $footer; ?>
 	</div>
 </body>
 

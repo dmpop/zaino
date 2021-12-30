@@ -2,10 +2,9 @@
 // CORS policy to allow the submitted page to read the response
 header('Access-Control-Allow-Origin: *');
 error_reporting(E_ERROR);
-
 $title = "Zaino";
 $theme = "light";
-$password = "secret";
+$password = "password";
 $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 ?>
 
@@ -14,7 +13,7 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 <!-- Author: Dmitri Popov, dmpop@linux.com
 					License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt
 
-javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&password=secret' -->
+javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&password=password' -->
 
 <head>
 	<meta charset="utf-8">
