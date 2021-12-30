@@ -1,6 +1,9 @@
 <?php
 error_reporting(E_ERROR);
-include('config.php');
+$title = "Zaino";
+$theme = "light";
+$password = "secret";
+$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 ?>
 
 <html lang="en" data-theme="<?php echo $theme ?>">
@@ -28,8 +31,12 @@ include('config.php');
 
 <body>
 	<div class="card text-center">
-		<h1 style="margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0.5em; margin-bottom: 0.5em; color: #f6a159ff; text-transform: uppercase;"><?php echo $title ?></h1>
-		<button onclick="location.href='index.php'">Back</button>
+		<div style="margin-top: 1em; margin-bottom: 1em;">
+			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+		</div>
+		<hr>
+		<button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
 		<?php
 		function Read()
 		{
@@ -45,7 +52,7 @@ include('config.php');
 			fclose($fp);
 		}
 		if (isset($_POST["save"])) {
-			if ($_POST['password'] != $key) {
+			if ($_POST['password'] != $password) {
 				print '<p>Wrong password</p>';
 				exit();
 			}

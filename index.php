@@ -2,7 +2,11 @@
 // CORS policy to allow the submitted page to read the response
 header('Access-Control-Allow-Origin: *');
 error_reporting(E_ERROR);
-include('config.php');
+
+$title = "Zaino";
+$theme = "light";
+$password = "secret";
+$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 ?>
 
 <html lang="en" data-theme="<?php echo $theme ?>">
@@ -10,7 +14,7 @@ include('config.php');
 <!-- Author: Dmitri Popov, dmpop@linux.com
 					License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt
 
-javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&key=secret' -->
+javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/index.php?snippet='+escape(snippet)+'&url='+encodeURIComponent(location.href)+'&password=secret' -->
 
 <head>
 	<meta charset="utf-8">
@@ -24,11 +28,14 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 
 <body>
 	<div class="card text-center">
-		<h1 style="margin-left: 0.19em; margin-bottom: 0.5em; vertical-align: middle; letter-spacing: 3px; margin-top: 0.5em; color: #f6a159ff; text-transform: uppercase;"><span><?php echo $title ?></span></h1>
-		<button style="margin-bottom: 2em;" onclick="location.href='edit.php'">Edit</button>
+		<div style="margin-top: 1em; margin-bottom: 1em;">
+			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+		</div>
 		<hr>
+		<button style="margin-top: 1em;" onclick="location.href='edit.php'">Edit</button>
 		<?php
-		if ($_GET['key'] == $key) {
+		if ($_GET['password'] == $password) {
 			$snippet = $_GET['snippet'] . "\n";
 			$snippet .= file_get_contents('zaino.txt');
 			file_put_contents('zaino.txt', $snippet);
@@ -46,10 +53,9 @@ javascript:var snippet = prompt('Snippet'); location.href='https://127.0.0.1/ind
 			echo "</script>";
 		}
 		?>
-		<hr>
-		<p style="margin-right: 0.5em;"><?php echo $footer; ?>
-		</p>
 	</div>
+	<div class="text-center">
+		<?php echo $footer; ?>
 	</div>
 </body>
 
